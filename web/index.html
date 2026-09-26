@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pixel Notes · 像素筆記</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Crect width='8' height='8' fill='%231a1c2c'/%3E%3Crect x='2' y='1' width='4' height='6' fill='%23ffcd75'/%3E%3Crect x='3' y='2' width='2' height='1' fill='%231a1c2c'/%3E%3Crect x='3' y='4' width='2' height='1' fill='%231a1c2c'/%3E%3C/svg%3E">
+  <script src="/tracker.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="/" data-link>
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-text">PIXEL NOTES</span>
+    </a>
+    <form class="search" id="search-form" role="search">
+      <input id="search-input" name="q" type="search" placeholder="搜尋文章…" autocomplete="off">
+      <button class="btn" type="submit">GO</button>
+    </form>
+    <nav class="nav">
+      <a href="/bookmarks" data-link>收藏</a>
+      <a href="/login" data-link id="nav-account">登入</a>
+    </nav>
+  </header>
+
+  <main id="app" class="container" tabindex="-1"></main>
+
+  <footer class="footer container">
+    <form class="panel newsletter" id="newsletter-form">
+      <div>
+        <h3>📮 訂閱電子報</h3>
+        <p>每週一封，收到最新的資料工程筆記。</p>
+      </div>
+      <div class="row">
+        <input name="email" type="email" required placeholder="you@example.com">
+        <button class="btn btn-accent" type="submit">訂閱</button>
+      </div>
+    </form>
+    <p class="muted small">Pixel Notes 是 event-maestro 的練習網站，所有互動都會以 GA4 事件格式寫進 <code>data/raw/ga4_events/</code>。</p>
+  </footer>
+
+  <button class="debug-toggle btn" id="debug-toggle" type="button" aria-expanded="false">🕹 事件面板</button>
+  <aside class="debug" id="debug" hidden>
+    <div class="debug-head">
+      <strong>EVENT CONSOLE</strong>
+      <button class="btn btn-small" id="debug-close" type="button">✕</button>
+    </div>
+    <div class="debug-meta" id="debug-meta"></div>
+    <div class="debug-actions">
+      <span class="muted small">模擬進站來源（開新 session）：</span>
+      <button class="btn btn-small" data-utm="google/organic">Google 搜尋</button>
+      <button class="btn btn-small" data-utm="newsletter/email/weekly_digest">電子報</button>
+      <button class="btn btn-small" data-utm="facebook/social/autumn_share">Facebook</button>
+      <button class="btn btn-small" data-utm="google/cpc/data_course_ads">Google 廣告</button>
+    </div>
+    <ol class="debug-log" id="debug-log"></ol>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
