@@ -1,0 +1,17 @@
+[project]
+name = "event-maestro"
+version = "0.1.0"
+description = "A pixel-art knowledge-sharing site that produces GA4-style user event data"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+event-maestro = "event_maestro.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["event_maestro"]
